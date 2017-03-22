@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Unique Tracking Codes Made Easy</title>
+ 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<link rel="stylesheet" type="text/css" href="Campaign_Builder.css">
+  	
+</head>
+<script>
+window.writeValues = function(form) {
+  var URL = form.URL.value;
+  var Source = form.Source.value;
+  var Medium = form.Medium.value;
+  var Campaign = form.Campaign.value;
+  var Department = form.Department.value;
+  var Content = form.Content.value;
+
+  document.getElementById('fullname').innerHTML = URL + '?utm_source=' + Source + '&utm_medium=' + Medium + '&utm_campaign=' + Campaign + '&utm_term=' + Department + '&utm_content=' + Content;
+}
+
+	//Scroll down menus
+  $( function() {
+    $( "#source" ).selectmenu();
+ 
+    $( "#medium" ).selectmenu();
+	$( "#department" ).selectmenu();
+
+  } );
+	</script>
+<body>
+<form action="CampaignURL" method="get">
+<table id="CampaignBuilder" width="400">
+ <tr>
+	 <td><strong>Web URL:</strong> This is the link you want people to go to.</td>
+	<td><input type="text" name="URL" id="URL" placeholder="www.google.org"></td>
+ </tr>
+ <tr>
+	 <td><label for="Source"><strong>Source:</strong> Use Source to identify a search engine, newsletter name, or other source.<br><i>Example: google</i></label></td>
+   	<td><select name="Source" id="Source">
+      <option selected="selected">Home Page Slider</option>
+      <option>Newsletter</option>
+      <option>AM Marketing</option>
+      <option>LM Marketing</option>
+      <option>Conference Marketing</option>
+      <option>Bulletin</option>
+      <option>Workshop Marketing</option>
+    </select>
+	 </td>
+	</tr>
+  <tr>
+	  <td><label for="Medium"><strong>Medium:</strong> Use Medium to identify a medium such as email, banner or or Paid Advertisement. <i>Example: banner</i></label></td>
+      <td><select name="Medium" id="Medium">
+      <option selected="selected">banner</option>
+      <option>e-blast</option>
+      <option>social</option>
+    </select>
+	  </td>
+	</tr>
+ <tr>
+	 <td><strong>Campaign Name:</strong> Used for keyword analysis. Use utm_campaign to identify a specific product promotion or strategic campaign.<br><i>Example: AM_2017</i></td>
+	 <td><input type="text" name="Campaign" id="Campaign" placeholder="Events, products, promos"></td>
+	</tr>
+ <tr>
+	 <td><label for="Department"><strong>Department:</strong> Department acts as the term search for us. What department does this campaign focus on?<br><i>Example: Programs and Events</i></label></td>
+    <td>
+     <select name="Department" id="Department">
+      <option selected="selected">Programs and Events</option>
+      <option>Legal Resources</option>
+      <option>Membership</option>
+      <option>Bulletin</option>
+      <option>Communications</option>
+      <option>Blog</option>
+		 </select></td>
+	</tr>
+    <tr>
+		<td><strong>Content:</strong> Used for A/B testing and content-targeted ads. Use Content to differentiate links that point to the same URL or need further specification <br><i>Examples: Spot 1 vs. Spot 2 in the Home Page Slider or Member vs Non-Member emails</i></td>
+		<td><input type="text" name="Content" id="Content" placeholder="Differentiate Campaign Names"></td>
+	</tr>
+<tr>
+  
+</tr>
+</table>
+<br>
+<input type="button" value="Submit" onClick="writeValues(form)"><br><br>
+ Full Link:<br>
+<span id="fullname"></span>
+</form>
+</body>
+</html>
