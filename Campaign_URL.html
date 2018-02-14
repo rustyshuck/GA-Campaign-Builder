@@ -5,30 +5,10 @@
 <title>Unique Tracking Codes Made Easy</title>
  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="Campaign_Builder.js"></script>
   	<link rel="stylesheet" type="text/css" href="Campaign_Builder.css">
   	
 </head>
-<script>
-window.writeValues = function(form) {
-  var URL = form.URL.value;
-  var Source = form.Source.value;
-  var Medium = form.Medium.value;
-  var Campaign = form.Campaign.value;
-  var Department = form.Department.value;
-  var Content = form.Content.value;
-
-  document.getElementById('fullname').innerHTML = URL + '?utm_source=' + Source + '&utm_medium=' + Medium + '&utm_campaign=' + Campaign + '&utm_term=' + Department + '&utm_content=' + Content;
-}
-
-	//Scroll down menus
-  $( function() {
-    $( "#source" ).selectmenu();
- 
-    $( "#medium" ).selectmenu();
-	$( "#department" ).selectmenu();
-
-  } );
-	</script>
 <body>
 <form action="CampaignURL" method="get">
 <table id="CampaignBuilder" width="400">
@@ -87,5 +67,7 @@ window.writeValues = function(form) {
  Full Link:<br>
 <span id="fullname"></span>
 </form>
+</body>
+</html>
 </body>
 </html>
